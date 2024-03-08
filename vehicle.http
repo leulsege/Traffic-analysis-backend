@@ -1,0 +1,84 @@
+### faultRecord
+
+POST http://localhost:8000/api/faultrecords
+CONTENT-TYPE: application/json
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+{
+  "givenPoint": 10,
+  "reducedPoint": 3,
+  "driver": "656e5686796b765f5af2cd7e"
+}
+
+### update faultRecord
+PATCH http://localhost:8000/api/faultrecords/659c7a420bd8505bd887e55b
+CONTENT-TYPE: application/json
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+{
+  "reducedPoint": 8
+}
+### get for it
+GET http://localhost:8000/api/faultrecords
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+### for vehicle
+
+POST http://localhost:8000/api/vehicles
+CONTENT-TYPE: application/json
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+{
+  "vehicleType": "Hoverboard",
+  "PlateNumber": 782,
+  "MoterNumber": 456,
+  "chanciNumber": 789,
+  "sideNumber": 201,
+  "pmServiceTime": 15000,
+  "bmServiceTime": 30000,
+  "startingPoint": "City C",
+  "destination": "City D",
+  "stayingPlace": "City E",
+  "driver": "6597144ef37e9b70f4c16941"
+}
+
+
+
+### get vehicle
+GET http://localhost:8000/api/vehicles/65c4d84e0df86799f9e6f2d9
+
+### update vehicle
+PATCH http://localhost:8000/api/vehicles/65c4d84e0df86799f9e6f2d9
+CONTENT-TYPE: application/json
+
+{
+  "moterNumber": 4566
+}
+### accdient records
+
+GET http://localhost:8000/api/vehicleaccidents
+# Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+### create it
+
+POST http://localhost:8000/api/vehicleaccidents/65972694f1091b7751638090
+Content-Type: application/json
+
+{
+  "accidentDate": "2023-01-15T12:30:00.000Z",
+  "accidentPlace": "City Center",
+  "damages": "Minor damages to the front bumper",
+  "cause": "Traffic collision",
+  "guilty": "Other driver",
+  "damageEstimation": 1000,
+  "insuranceSentDate": "2023-01-20T00:00:00.000Z",
+  "excessLetterDate": "2023-01-25",
+  "maintenanceProcess": "Body repair and paint",
+  "preformDate": "2023-02-01T08:00:00.000Z",
+  "paymentDateLetterNumber": "ABC123",
+  "paymentRequestLetterDate": "2023-02-10T00:00:00.000Z",
+  "reducedPoint": 4,
+  "givenDecision": "Compensation granted",
+  "vehicle": "65971e72ddd2d5c29a602a8c",
+  "driver": "65b1a919841ea75e78f986fb"
+}

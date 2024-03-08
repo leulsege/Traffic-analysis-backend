@@ -1,0 +1,119 @@
+POST http://localhost:8000/api/drivers
+CONTENT-TYPE: application/json
+
+{
+  "fullName": "John Doe",
+  "licenseLevel": "Class A",
+  "licenseNumber": "ABC123",
+  "licenseExpiredDate": "2024-12-31T23:59:59.999Z",
+  "gender": "Male",
+  "phoneNumber": "1234567890",
+  "commencementDate": "2020-01-01T00:00:00.000Z",
+  "birthDate": "1990-01-01T00:00:00.000Z",
+  "idNumber": "123456789",
+  "givenPoint": 10,
+  "vehicle": "123"
+}
+
+### get drivers
+
+GET http://localhost:8000/api/drivers/659706251e689e5864529814
+
+### get all tours
+
+GET http://localhost:8000/api/drivers/accidentfree
+Cookie:jtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ1YWQ2MmZlNzJhMTcxNmRjNzJmOSIsImlhdCI6MTcwNDgxMjQzNSwiZXhwIjoxNzEyNTg4NDM1fQ.B9Mw2g0H4kpO8mwn2aV5xheWoUDD4_bE-YnHatphHfw
+
+
+### clear
+
+DELETE http://localhost:8000/api/drivers/clear/65c53eb5a50e29a171d118ef
+Cookie:jtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQ1YWQ2MmZlNzJhMTcxNmRjNzJmOSIsImlhdCI6MTcwNDgxMjQzNSwiZXhwIjoxNzEyNTg4NDM1fQ.B9Mw2g0H4kpO8mwn2aV5xheWoUDD4_bE-YnHatphHfw
+
+
+### update driver
+
+GET http://localhost:8000/api/trainings/659722c69235c356e0646486
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU1YjBmMjIyNmFjOThmMTY1NWI0OCIsImlhdCI6MTcwNDg3NjkwMCwiZXhwIjoxNzEyNjUyOTAwfQ.LCFqZBjGRGoobZh8p8rk8j0rCah3vKSAETPTg_71ogQ
+### training 
+ 
+POST http://localhost:8000/api/trainings
+CONTENT-TYPE: application/json
+
+{
+  "trainingType": "Customer Service",
+  "trainingStartDate": "2023-10-15",
+  "trainingEndDate": "2023-10-18",
+  "trainingPassPoint": 90,
+  "trainingResult": 80,
+  "checkUp": "Passed",
+  "driver": "6597068f1e689e5864529829"
+}
+
+
+
+### admin routes
+
+POST http://localhost:8000/api/admins/signup
+CONTENT-TYPE: application/json
+
+{
+  "firstName": "yafet",
+  "lastName": "zer",
+  "email": "zerihunyafet@fdf.com",
+  "password": "passwordleul",
+  "confirmPassword": "passwordleul",
+  "role": "admin"
+}
+### update admin
+
+PATCH   http://localhost:8000/api/setconfig
+Content-Type: application/json
+
+{
+  "givenPoint":60,
+  "trainingEntryPoint":5
+}
+
+
+### forget password
+POST http://localhost:8000/api/admins/forgetpassword
+Content-Type: application/json
+
+{
+  "email":"zerihunyafet80@gmail.com"
+}
+
+### update password
+PATCH http://localhost:8000/api/admins/updatemypassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTc0OTA2M2Y2ZDE0YmFlMzYyNTdlYiIsImlhdCI6MTcwNDQ4NjAxNiwiZXhwIjoxNzEyMjYyMDE2fQ.DMdL5Kq4C4xj-ypaeV-eGFOAG6Zq7B8PkvuwwRNdBBY
+Content-Type: application/json
+
+{
+  "currentPassword":"leulleul",
+  "password":"passwordleul",
+  "confirmPassword":"passwordleul"
+}
+### admin routes
+
+POST  http://localhost:8000/api/admins/signin
+CONTENT-TYPE: application/json
+
+{
+  "email": "zerihunyafet80@gmail.com",
+  "password": "yafetpassword"
+}
+
+### get all user
+POST http://localhost:8000/api/admins/signin
+CONTENT-TYPE: application/json
+
+{
+  "email": "leul.leul@exampl.com",
+  "password": "leulpassword"
+}
+
+### update 
+DELETE  http://localhost:8000/api/admins/65b26841b0ee9f4807d77177
+
+
