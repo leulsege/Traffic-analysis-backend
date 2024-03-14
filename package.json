@@ -6,6 +6,8 @@
   "scripts": {
     "start:dev": "nodemon",
     "start:prod": "NODE_ENV=production nodemon",
+    "build": "tsc && npm run build:assets",
+    "build:assets": "webpack --config",
     "format": "prettier --write 'src/**/*.ts'",
     "lint": "eslint . --fix",
     "copy-static": "copyfiles -u 1 *.env public/**/* dist"
@@ -24,7 +26,9 @@
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@nestjs/platform-express": "^10.2.8",
