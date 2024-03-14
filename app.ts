@@ -20,7 +20,7 @@ const app = express()
 app.use(cookieParser())
 app.use(
   cors({
-    origin: '*',
+    origin: 'https://traffic-analysis-frontend.vercel.app',
     credentials: true,
   }),
 )
