@@ -27,9 +27,10 @@ const createSendToken = (
       ),
       httpOnly: true,
       secure: true,
+      sameSite: 'none',
     }
 
-    res.cookie('token', token, cookieOptions)
+    res.cookie('token', token, cookieOptions as any)
 
     user.password = undefined
     res.status(statusCode).json({
